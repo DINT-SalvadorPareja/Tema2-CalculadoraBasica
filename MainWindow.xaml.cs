@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Calculadora_Basica
 {
     /// <summary>
@@ -34,30 +35,38 @@ namespace Calculadora_Basica
 
         private void CalcularButton(object sender, RoutedEventArgs e)
         {
-            double num1 = int.Parse(OperadorTextBox1.Text);
-            double num2 = int.Parse(OperadorTextBox2.Text);
-            char operador = char.Parse(OperadorTextBox.Text);
+            
 
-            if (operador == '+')
+            try
             {
-                ResultadoTextBox.Text = (num1 + num2).ToString();
+                double num1 = int.Parse(OperadorTextBox1.Text);
+                double num2 = int.Parse(OperadorTextBox2.Text);
+                char operador = char.Parse(OperadorTextBox.Text);
+
+                if (operador == '+')
+                {
+                    ResultadoTextBox.Text = (num1 + num2).ToString();
+                }
+                else if (operador == '-')
+                {
+                    ResultadoTextBox.Text = (num1 - num2).ToString();
+                }
+                else if (operador == '*')
+                {
+                    ResultadoTextBox.Text = (num1 * num2).ToString();
+                }
+                else if (operador == '/')
+                {
+                    ResultadoTextBox.Text = (num1 / num2).ToString();
+                }
+
             }
-            else if (operador == '-')
+            
+            catch (Exception e1)
             {
-                ResultadoTextBox.Text = (num1 - num2).ToString();
+                MessageBox.Show($"ERROR:  {e1}", "Calculadora", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-            else if (operador == '*')
-            {
-                ResultadoTextBox.Text = (num1 * num2).ToString();
-            }
-            else if (operador == '/')
-            {
-                ResultadoTextBox.Text = (num1 / num2).ToString();
-            }
-            else
-            {
-                ResultadoTextBox.Text = "ERROR";
-            }
+            
 
         }
 
@@ -68,6 +77,15 @@ namespace Calculadora_Basica
             OperadorTextBox1.Text = "";
             OperadorTextBox2.Text = "";
 
+        }
+
+        private void OperadorTextBoxCambiado(object sender, TextChangedEventArgs e)
+        {
+            string input = OperadorTextBox.Text;
+            if (input == "+" || input == "-" || input == "*" || input == "/")
+            {
+                CalcularBoton.IsEnabled = true;
+            }
         }
     }
 }

@@ -14,10 +14,10 @@
         </Grid.ColumnDefinitions>
         <TextBox x:Name="OperadorTextBox1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="66,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
         <TextBox x:Name="OperadorTextBox2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="66,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="OperadorTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="66,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <TextBox x:Name="ResultadoTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="66,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged"/>
-        <Button Content="Calcular" Grid.Column="2" HorizontalAlignment="Left" Margin="251,69,0,0" VerticalAlignment="Top" Width="75" Click="CalcularButton"/>
-        <Button Content="Limpiar" Grid.Column="2" HorizontalAlignment="Left" Margin="251,105,0,0" VerticalAlignment="Top" Width="75" Click="LimpiarButton"/>
+        <TextBox x:Name="OperadorTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="66,118,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="OperadorTextBoxCambiado"/>
+        <TextBox x:Name="ResultadoTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="66,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="TextBox_TextChanged" IsReadOnly="True"/>
+        <Button x:Name="CalcularBoton" Content="Calcular" Grid.Column="2" HorizontalAlignment="Left" Margin="251,69,0,0" VerticalAlignment="Top" Width="75" Click="CalcularButton" IsEnabled="False" IsDefault="True"/>
+        <Button Content="Limpiar" Grid.Column="2" HorizontalAlignment="Left" Margin="251,105,0,0" VerticalAlignment="Top" Width="75" Click="LimpiarButton" IsCancel="True"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,37,0,0" TextWrapping="Wrap" Text="Operador 1" VerticalAlignment="Top"/>
         <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="0,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Operador "/><Run Text="2"/></TextBlock>
         <TextBlock Grid.Column="2" HorizontalAlignment="Left" Margin="1,128,0,0" TextWrapping="Wrap" Text="Operador" VerticalAlignment="Top"/>
