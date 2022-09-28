@@ -86,6 +86,10 @@ namespace Calculadora_Basica
             {
                 CalcularBoton.IsEnabled = true;
             }
+            else
+            {
+                CalcularBoton.IsEnabled = false;
+            }
         }
     }
 }
