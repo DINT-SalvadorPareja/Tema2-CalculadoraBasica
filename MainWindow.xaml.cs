@@ -30,13 +30,15 @@ namespace Calculadora_Basica
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+
+
+        private void CalcularButton(object sender, RoutedEventArgs e)
         {
             double num1 = int.Parse(OperadorTextBox1.Text);
             double num2 = int.Parse(OperadorTextBox2.Text);
             char operador = char.Parse(OperadorTextBox.Text);
 
-            if(operador == '+')
+            if (operador == '+')
             {
                 ResultadoTextBox.Text = (num1 + num2).ToString();
             }
@@ -56,16 +58,16 @@ namespace Calculadora_Basica
             {
                 ResultadoTextBox.Text = "ERROR";
             }
-           
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void LimpiarButton(object sender, RoutedEventArgs e)
         {
             ResultadoTextBox.Text = "";
             OperadorTextBox.Text = "";
             OperadorTextBox1.Text = "";
             OperadorTextBox2.Text = "";
+
         }
     }
 }
