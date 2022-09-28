@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculadora_Basica"
         mc:Ignorable="d"
-        Title="MainWindow" Height="243.5" Width="486.5">
+        Title="Calculadora" Height="243.5" Width="486.5">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
